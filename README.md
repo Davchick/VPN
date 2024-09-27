@@ -10,12 +10,12 @@
 
 Убедитесь, что на вашем ПК установлены эти инструменты:
 
-- терминал Git Bash ([скачать](https://git-scm.com/downloads))
+- терминал [Git Bash](https://git-scm.com/downloads)
 - расширение Live Server в VS Code
 
 ### Скачать код
 
-   `git clone [git url]`
+   `git clone https://github.com/Davchick/vpn`
 
 
 ## Присоединяйся к нам
