@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "./reset.css";
 
-body{
+body {
   font-family: "Rubik", sans-serif;
   color: black;
 }
 
-.container{
-  max-width: 1400px;
+.container {
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-.header{
+.header {
   margin-top: 46px;
   display: flex;
   justify-content: space-between;
@@ -26,7 +28,7 @@ body{
   font-size: 20px;
 }
 
-.logo-bold{
+.logo-bold {
   font-weight: 600;
 }
 
@@ -40,6 +42,7 @@ body{
   column-gap: 30px;
   font-weight: 500;
   align-items: center;
+  white-space: nowrap;
 }
 
 .btn {
@@ -47,4 +50,108 @@ body{
   color: #f53855 !important;
   padding: 13px 45px;
   border-radius: 50px;
+}
+
+/* HOVER EFFECTS */
+@media (hover: hover) {
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  .btn:hover {
+    transition: background-color ease 0.8s;
+    background-color: #f53855;
+    color: white !important;
+  }
+}
+
+/* ADAPTABILITY */
+@media (max-width: 1065px) {
+  .navbar {
+    display: none;
+  }
+
+  .navbar.active {
+    display: inline-flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.088);
+    height: 100vh;
+    width: 50vw;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    row-gap: 30px;
+    padding: 40px;
+    padding-top: 58px;
+  }
+
+  .header__wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 26px;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 500;
+  }
+
+  .hamburger-icon div {
+    height: 2px;
+    width: 100%;
+    background: #000;
+    transition: all ease 0.2s;
+  }
+
+  .active .top {
+    transform: rotate(-45deg);
+  }
+
+  .active .middle {
+    display: none;
+  }
+
+  .active .bottom {
+    transform: rotate(45deg);
+    margin-top: -24px;
+  }
+}
+
+@media (max-width: 580px) {
+  .logo {
+    font-size: 17px;
+    column-gap: 4px;
+  }
+  .logo img {
+    block-size: 30px;
+  }
+  .header-login {
+    font-size: 14px;
+    column-gap: 14px;
+  }
+  .header__wrapper {
+    column-gap: 12px;
+  }
+  .header__wrapper .btn {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 389px) {
+  .logo img {
+    block-size: 33px;
+  }
+
+  .logo p {
+    display: none;
+  }
+
+  .navbar.active {
+    width: 60vw;
+  }
 }
