@@ -5,13 +5,21 @@
 body {
   font-family: "Rubik", sans-serif;
   color: black;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
+
+/* HEADER */
 
 .header {
   margin-top: 46px;
@@ -52,6 +60,81 @@ body {
   border-radius: 50px;
 }
 
+/* FOOTER */
+.footer {
+  background-color: #f8f8f8;
+}
+
+.footer__wrapper {
+  padding: 0 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+  padding-top: 65px;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.footer__info {
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.footer__text {
+  color: #4f5665 !important;
+}
+
+.footer__text span {
+  font-weight: 500;
+}
+
+.footer__social-icons {
+  display: flex;
+  column-gap: 20px;
+}
+
+.footer__social-icons a {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: -6px 4px 15px #b8b8b8;
+  cursor: pointer;
+  position: relative;
+}
+
+.footer__social-icons a svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer__copyright {
+  color: #afb5c0;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  white-space: nowrap;
+}
+
+.footer__links li:first-child {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer__links-item:hover {
+  text-decoration: underline;
+}
+
 /* HOVER EFFECTS */
 @media (hover: hover) {
   .nav-link:hover {
@@ -62,8 +145,17 @@ body {
     background-color: #f53855;
     color: white !important;
   }
-}
 
+  .footer__social-icons a:hover {
+    transition: all ease 0.5s;
+    background: #f53855;
+    box-shadow: 0 0 17px #f53855;
+  }
+
+  .footer__social-icons a:hover path {
+    fill: white;
+  }
+}
 /* ADAPTABILITY */
 @media (max-width: 1065px) {
   .navbar {
@@ -122,21 +214,31 @@ body {
   }
 }
 
+@media (max-width: 892px) {
+  .footer__wrapper{
+    justify-content: space-around;
+  }
+}
+
 @media (max-width: 580px) {
   .logo {
     font-size: 17px;
     column-gap: 4px;
   }
+
   .logo img {
     block-size: 30px;
   }
+
   .header-login {
     font-size: 14px;
     column-gap: 14px;
   }
+
   .header__wrapper {
     column-gap: 12px;
   }
+
   .header__wrapper .btn {
     padding: 10px 20px;
   }
@@ -147,7 +249,7 @@ body {
     block-size: 33px;
   }
 
-  .logo p {
+  .header__logo p {
     display: none;
   }
 
